@@ -1,0 +1,13 @@
+<form [formGroup]="myForm" (ngSubmit)="getApi()">
+    <div>
+        <label>Buscar</label>
+        <input formControlName="buscar" type="text"/>
+        <p *ngIf="myForm.get('buscar')?.touched && myForm.get('buscar')?.hasError('required')">El campo es obligatorio</p>
+    </div>
+    <button>Save</button>
+</form>
+<ul *ngFor = "let dato of datos; let i = index">
+    <p>{{dato.id}}</p>
+    <p>{{dato.title}}</p>
+    <br>
+</ul>
