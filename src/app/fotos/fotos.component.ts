@@ -27,9 +27,9 @@ export class FotosComponent implements OnInit {
 
   getApi() {
     this.busqueda = this.myForm.get('buscar').value;
-    this._peticiones.obtener(this.busqueda).subscribe(
-      data=>{console.log(data);
-        this.datos =data;
+    this._peticiones.obtener().subscribe(  //(this.busqueda).subscribe(
+      data=>{//console.log(data);
+        this.datos = data;
       }, error => {
         var errorMessage = error as any;
         console.log(errorMessage);

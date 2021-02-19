@@ -6,8 +6,7 @@
     </div>
     <button>Save</button>
 </form>
-<ul *ngFor = "let dato of datos; let i = index">
-    <p>{{dato.id}}</p>
-    <p>{{dato.title}}</p>
+<ul *ngIf = "datos != null">
+    <img src="{{datos.message}}">
     <br>
 </ul>

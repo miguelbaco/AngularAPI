@@ -12,8 +12,8 @@ export class FotosService {
     //this.url = "https://jsonplaceholder.typicode.com/posts";
   }
 
-  obtener(busqueda:string): Observable<any> {
-    this.url = "http://api.flickr.com/services/feeds/photos_public.gne?tags=" + busqueda;
+  obtener(): Observable<any> {//busqueda:string): Observable<any> {
+    this.url = "https://dog.ceo/api/breeds/image/random";//+ busqueda;
     return this.http.get(this.url);
   }
 }
