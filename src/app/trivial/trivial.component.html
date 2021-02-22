@@ -1,0 +1,22 @@
+<form [formGroup]="myForm" (ngSubmit)="getApi()">
+    <div>
+        <label>Nº de preguntas</label>
+        <input formControlName="npreguntas" type="number"/>
+        <p *ngIf="myForm.get('npreguntas')?.touched && myForm.controls['npreguntas'].hasError('max')">El número máximo de preguntas es 15</p>
+    </div>
+    <button>Empezar</button>
+</form>
+
+<div *ngIf = "trivif.preguntas?.length > 0">
+    <form [formGroup]="myForm2">
+        <div *ngFor="let pregunta of trivif.preguntas;let i = index">
+            <div>
+                <p>Question nº {{i+1}}</p>
+                <h3>{{pregunta}}</h3>
+                <input formControlName="respuesta{{i+1}}" type="string"/>
+                <p>{{trivif.respuestas[i]}}</p>
+                <p *ngIf="myForm2.controls['respuesta{{i+1}}']?.hasError('pattern')">{{trivif.respuestas[i]}}</p>
+            </div>
+        </div>
+    </form>
+</div>
