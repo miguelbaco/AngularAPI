@@ -24,17 +24,6 @@ export class TrivialComponent implements OnInit {
     this.myForm = this.fb.group({
       'npreguntas': ['', [Validators.min(1), Validators.max(15)]]
     });
-
-    let i:number = 1;
-    if(this.trivif.preguntas.length != 0) {
-      for(let pregunta of this.trivif.preguntas) {
-        let nameformg = "respuesta" + i;
-        this.myForm2 = this.fb.group({
-          nameformg: ['', [Validators.pattern('^' + this.trivif.respuestas[i-1] + '$')]]
-        });
-        i++;
-      }
-    }
   }
 
   getApi() {
@@ -62,8 +51,5 @@ export class TrivialComponent implements OnInit {
     }
     return false;
   }
-
-
-
 
 }
