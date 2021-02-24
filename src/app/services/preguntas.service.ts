@@ -14,10 +14,10 @@ export class PreguntasService {
   constructor(private http: HttpClient) { }
 
   obtener(trivif: Trivial): Observable<any> {
-    if(trivif.npreguntas != null) {
-      this.url = "https://opentdb.com/api.php?amount=10";
+    if(trivif.numcategory == 0) {
+      this.url = "https://opentdb.com/api.php?amount=" + trivif.numpreguntas;
     } else {
-      this.url = "https://opentdb.com/api.php?amount=" + trivif.npreguntas;
+      this.url = "https://opentdb.com/api.php?amount=" + trivif.numpreguntas + "&category=" + trivif.numcategory;
     }
     return this.http.get(this.url);
   }

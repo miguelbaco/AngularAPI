@@ -29,12 +29,13 @@ export class TrivialComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      'npreguntas': ['', [Validators.min(1), Validators.max(15)]]
+      'npreguntas': ['', [Validators.min(1), Validators.max(15)]],
+      'category': ['', [Validators.required]]
     });
   }
 
   getApi() {
-    this.trivif = new Trivial(this.myForm.get('npreguntas').value, "");
+    this.trivif = new Trivial(this.myForm.get('npreguntas').value, this.myForm.get('category').value);
     this._peticiones.obtener(this.trivif).subscribe(
       data=>{//console.log(data);
         for (let resultados of data.results) {
@@ -106,8 +107,18 @@ export class TrivialComponent implements OnInit {
               .replace(/&Uacute;/g, "Ú")
               .replace(/&euro;/g, "€")
               .replace(/&deg;/g, "°");
+  }
 
-    
+  reinicio() {
+    this.trivif = new Trivial(10, "");
+    this.datos = [];
+    this.preguntactual = "";
+    this.respuestacierta = "";
+    this.respuestasrandom = [];
+    this.indice = 0;
+    this.notafinal= 0;
+    this.muestrapregunta = true;
+    this.finalisimo = false;
   }
 
 }

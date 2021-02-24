@@ -5,6 +5,7 @@
     <ng-template #terminar>
         <div>
             <p>Your result is: {{notafinal/2}} / {{trivif.numpreguntas}}</p>
+            <input type="submit" value="Retry" (click)="reinicio()">
         </div>
     </ng-template>
 
@@ -48,29 +49,24 @@
     </ng-template>
 
     </div>
-
-    <!--<ng-template #evaluar>
-        <div *ngIf="myForm2.get('respuestadada')?.hasError('pattern')" [ngIfElse]="correcto">
-            <p>La respuesta correcta era:</p><br>
-            <p>{{respuestacierta}}</p>
-            <input type="submit" value="Siguiente pregunta" (ngSubmit)="getPregunta()">
-        </div>
-
-        <ng-template #correcto>
-            <div>
-                <p>¡Has acertado!</p>
-                <input type="submit" value="Siguiente pregunta" (ngSubmit)="getPregunta()">
-            </div>
-        </ng-template>
-    </ng-template> -->
 </div>
 
 <ng-template #empezar>
     <form [formGroup]="myForm" (ngSubmit)="getApi()">
         <div>
             <label>Nº de preguntas</label>
-            <input formControlName="npreguntas" type="number"/>
-            <!--<p *ngIf="myForm.get('npreguntas')?.touched && myForm.controls['npreguntas'].hasError('max')">El número máximo de preguntas es 15</p> -->
+            <input formControlName="npreguntas" type="number" placeholder="
+            10 default questions"/>
+            <p *ngIf="myForm.get('npreguntas')?.touched && myForm.controls['npreguntas'].hasError('max')">El número máximo de preguntas es 15</p>
+        </div>
+
+        <div>
+            <label>Categoría</label>
+            <select formControlName="category"><!-- [(ngModel)]="category"> -->
+                <option [ngValue]="" selected="selected">Todos</option>
+                <option [ngValue]="General-Knowledge">General Knowledge</option>  
+                <option value="Books">Books</option>  
+            </select>
         </div>
         <button>Empezar</button>
     </form>
