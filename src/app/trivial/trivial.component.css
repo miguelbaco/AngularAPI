@@ -1,0 +1,50 @@
+.empezar {
+    margin: 60px;
+}
+
+.empezar div {
+    margin: 20px;
+}
+
+.empezar label {
+    margin-right: 10px;
+}
+
+p, label, input {
+    font-size: 20px;
+}
+
+.pregu p {
+    font-size: 17px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.pregu h3 {
+    font-size: 25px;
+}
+
+.solutions {
+    margin-left: 18%;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.solutions div {
+    text-align: left;
+    margin-top: 3%;
+    /*display: inline-block;*/
+    position: relative;
+    float: left;
+    width: 40%;
+}
+
+.cierto {
+    font-style: bold;
+    font-size: 25px;
+    margin: 0px;
+}
+
+.siguiente {
+    margin-top: 10px;
+}

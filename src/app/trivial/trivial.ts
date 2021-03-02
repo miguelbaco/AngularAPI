@@ -7,11 +7,8 @@ export class Trivial {
   public numcategory: number = null;
 
   constructor(public npreguntas:number, public buscategory: string) {
-    if(npreguntas == null) {
-      this.numpreguntas = 10;
-    } else {
       this.numpreguntas = npreguntas;
-    }
+    
 
       switch(buscategory) { 
         case "General-Knowledge": { 
@@ -30,7 +27,7 @@ export class Trivial {
           this.numcategory = 12; 
           break; 
         }
-        case "Musicals & Theatres": { 
+        case "Musicals": { 
           this.numcategory = 13; 
           break; 
         }
@@ -38,15 +35,15 @@ export class Trivial {
           this.numcategory = 14; 
           break; 
         }
-        case "Video Games": { 
+        case "Videogames": { 
           this.numcategory = 15; 
           break; 
         }
-        case "Board Games": { 
+        case "Board": { 
           this.numcategory = 16; 
           break; 
         }
-        case "Science & Nature": { 
+        case "Science": { 
           this.numcategory = 17; 
           break; 
         }
@@ -102,7 +99,7 @@ export class Trivial {
           this.numcategory = 30; 
           break; 
         }
-        case "Anime & Manga": { 
+        case "Anime": { 
           this.numcategory = 31; 
           break; 
         }

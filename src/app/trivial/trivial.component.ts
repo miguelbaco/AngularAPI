@@ -35,7 +35,11 @@ export class TrivialComponent implements OnInit {
   }
 
   getApi() {
-    this.trivif = new Trivial(this.myForm.get('npreguntas').value, this.myForm.get('category').value);
+    if(this.myForm.get('npreguntas').value == "") {
+      this.trivif = new Trivial(10, this.myForm.get('category').value);
+    } else {
+      this.trivif = new Trivial(this.myForm.get('npreguntas').value, this.myForm.get('category').value);
+    }
     this._peticiones.obtener(this.trivif).subscribe(
       data=>{//console.log(data);
         for (let resultados of data.results) {

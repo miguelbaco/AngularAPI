@@ -22,6 +22,6 @@ import { TrivialComponent } from './trivial/trivial.component';
     HttpClientJsonpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,19 +1,12 @@
-<style>
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 8px 0;
-  }
+<div class="todo">
+  <img src="../assets/background.jpg" id="bg" alt="">
+<div class="titulo">
+  <h1>Trivial no oficial</h1>
+</div>
 
-  p {
-    margin: 0;
-  }
-</style>
+<div class="contenido">
+  <app-trivial>Loading...</app-trivial>
+</div>
+</div>
 
-<a [routerLink] = "['fotos']" [routerLinkActive]="['activado']">Flickr</a><br>
-<a [routerLink] = "['trivial']" [routerLinkActive]="['activado']">Trivial</a><br>
-
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet> -->
